@@ -37,8 +37,8 @@ public class POServlet extends HttpServlet {
         }
         out.println("<!DOCTYPE html>");
         out.println("<body>");
-        out.println("<p>IDNum: " + IDNum + "</p>");
         out.println("<p>Status: " + SC_CUSTOM_TEST + "</p>");
+        out.println("<p>IDNum: " + IDNum + "</p>");
         out.println("</body>");
         out.println("</html>");
         out.close();
