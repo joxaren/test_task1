@@ -27,7 +27,7 @@ public class POServlet extends HttpServlet {
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
-        String IDNum = requestBodyToString(request).substring(6);
+        String IDNum = requestBodyToString(request).substring(6); // coulda used regex but i'm lazy
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         if (IDNum != null && IDisValid(IDNum)) {
