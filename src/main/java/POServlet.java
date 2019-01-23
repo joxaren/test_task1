@@ -8,6 +8,14 @@ public class POServlet extends HttpServlet {
 
     private int SC_CUSTOM_TEST;
 
+    public void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
+            throws IOException {
+        try {
+            handleRequest(httpServletRequest, httpServletResponse);
+        } catch (Exception ex) {
+        }
+    }
+
     public void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
             throws IOException {
         try {
