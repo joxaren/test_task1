@@ -27,13 +27,14 @@ public class POServlet extends HttpServlet {
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
-        String IDNum = requestBodyToString(request);
+        String IDNum = requestBodyToString(request).substring(6);
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        if (IDNum != null && !IDNum.isEmpty()) {
+        if (IDNum != null && IDisValid(IDNum)) {
             SC_CUSTOM_TEST = 0;
         } else {
             SC_CUSTOM_TEST = -1;
+            System.out.println(IDNum);
         }
         out.println("<!DOCTYPE html>");
         out.println("<body>");
@@ -73,6 +74,15 @@ public class POServlet extends HttpServlet {
         }
         String body = stringBuilder.toString();
         return body;
+    }
+
+    private boolean IDisValid (String id){
+        try {
+            Integer.parseInt(id);
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+      return true;
     }
 
     private static void logMessage(String module, String message) {
