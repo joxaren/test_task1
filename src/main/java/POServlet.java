@@ -18,10 +18,7 @@ public class POServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
             throws IOException {
-        try {
-            handleRequest(httpServletRequest, httpServletResponse);
-        } catch (Exception ex) {
-        }
+        httpServletResponse.getWriter().print("teeeeeest");
     }
 
     private void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
